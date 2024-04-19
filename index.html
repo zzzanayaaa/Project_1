@@ -1,68 +1,454 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Whisper&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="index.css" />
-    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      * {
+        padding: 0;
+        margin: 0;
+        font-family: poppins;
+        color: white;
+      }
+      body {
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+      }
+      .header {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: space-evenly;
+        margin: 10px;
+        margin-top: 10px;
+        padding: 20px;
+      }
+      .logo-name {
+        color: white;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+      .logo-name p {
+        font-size: 18px;
+        font-family: poppins;
+      }
+      .logo-name img {
+        width: 30px;
+        border-radius: 50px;
+        margin-right: 10px;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        padding: 0;
+      }
+      nav li a {
+        text-decoration: none;
+        margin-inline: auto;
+        margin: auto 10px;
+        font-size: 14px;
+        color: white;
+      }
+      .btn-header {
+        display: flex;
+        align-items: center;
+      }
+      .btn-header button {
+        color: orange;
+        padding: 8px 8px;
+        border: 1px solid orange;
+        border-radius: 8px;
+        background: none;
+        font-size: 14px;
+        margin-left: 15px;
+      }
+
+
+      .main {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;    
+        margin-top: 50px;    
+        gap: 70px;
+      }
+      .main-logo img {
+        width: 800px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+      .main p {
+        font-weight: 500;
+        font-size: 30px;
+        text-align: start;
+        font-family: poppins;
+        line-height: 1;
+        background-color: rgba(255, 197, 119, 0.50);
+        border-radius: 4px;
+        padding: 5px;
+      }
+      .info-btn {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+      }
+      .info-btn button {
+        color: orange;
+        width: 120px;
+        padding: 10px;
+        border: 1px solid orange;
+        background-color: transparent;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+
+      button {
+        transition: 0.5s;
+      }
+      button:hover {
+        background-color: orange;
+        color: white;
+        cursor: pointer;
+        transition: 0.5s;
+      }
+      .wallpaper {
+        transition: 0.5s;
+      }
+      .wallpaper:hover {
+        cursor: pointer;
+        /* margin-top: 20px;
+        margin-bottom: 20px; */
+        border: 1px solid orange;
+        /* transform: scale(1.3); */
+        transform: scale(1.2) rotate(-3deg);
+        transition: 0.5s;
+      }
+      a {
+        transition: 0.5s;
+      }
+      a:hover {
+        color: orange;
+        transition: 0.5s;
+      }
+      .footer {
+        display: flex;
+        background-color: rgba(255, 197, 119, 0.50);
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        gap: 15px;
+        padding: 10px;
+        margin-top: 20px;
+      }
+      .icon-f {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .icon-f img {
+        width: 20px;
+        align-items: center;
+      }
+      .footer p{
+        color: white;
+        font-size: 13px;
+      }
+      .footer a {
+        color: white;
+        text-decoration: none;
+      }
+
+      @media screen and (min-width: 900px) {
+        .header {
+          display: flex;
+          text-align: center;
+          align-items: center;
+          justify-content: space-evenly;
+          margin: 10px;
+          margin-top: 15px;
+          padding: 20px;
+        }
+        .btn-header nav{
+          display: flex;
+          align-items: center;
+        }
+        .main-logo img {
+          width: 550px;
+          border-radius: 10px;
+          margin-bottom: 20px;
+        }
+        .main p {
+        font-weight: 500;
+        font-size: 22px;
+        text-align: start;
+        font-family: poppins;
+        background-color: rgba(255, 197, 119, 0.50);
+        border-radius: 4px;
+        padding: 5px;
+      }
+      .info-btn button {
+        color: orange;
+        width: 100px;
+        padding: 8px;
+        border: 1px solid orange;
+        background-color: transparent;
+        border-radius: 4px;
+        font-size: 12px;
+      }
+      button:hover {
+        background-color: orange;
+        color: white;
+        cursor: pointer;
+        transition: 0.5s;
+      }
+      .wallpaper:hover {
+        /* margin-top: 20px;
+        margin-bottom: 20px; */
+        border: 1px solid orange;
+        /* transform: scale(1.3); */
+        transform: scale(1.2) rotate(-3deg);
+        transition: 0.5s;
+      }
+      }
+
+      .info-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 70vh;
+      }
+      
+      .card img {
+        width: 220px;
+        height: 200px;
+        object-fit: cover;
+        position: relative;
+        transition: 0.5s;
+      }
+      .card {
+        height: 200px;
+        margin: 20px;
+        overflow: hidden;
+        transition: 0.5s;
+        cursor: pointer;
+      }
+
+      .intro {
+        width: 218px;
+        height: 0;
+        position: absolute;
+        background: rgb(27, 27, 27, 0.50);
+        box-sizing: border-box;
+        transition: 0.5s;
+      }
+      .intro p {
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.5s;
+        text-align: center;
+      }
+      .card:hover .intro {
+        height: 100px;
+        transition: 0.5s;
+        border: 1px solid orange;
+      }
+      .card:hover p {
+        visibility: visible;
+        opacity: 1;
+        color: white;
+        transition: 0.5s;
+      }
+      .card:hover img {
+        transform: scale(1.3) rotate(3deg);
+        transition: 0.5s;
+      }
+      
+      @media screen and (max-width: 800px) {
+        .header {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: space-around;
+        margin: 10px;
+        margin-top: 15px;
+        padding: 20px;
+      }
+      .btn-header nav{
+        display: flex;
+        align-items: center;
+        display: none;
+      }
+      
+        .main-logo img {
+        width: 300px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+      .main p {
+        font-weight: 500;
+        font-size: 14px;
+        text-align: start;
+        font-family: poppins;
+        background-color: rgba(255, 197, 119, 0.50);
+        border-radius: 4px;
+        padding: 5px;
+      }
+      .info-btn button {
+        color: orange;
+        width: 100px;
+        padding: 8px;
+        border: 1px solid orange;
+        background-color: transparent;
+        border-radius: 4px;
+        font-size: 12px;
+      }
+      button:hover {
+        background-color: orange;
+        color: white;
+        cursor: pointer;
+        transition: 0.5s;
+      }
+      .wallpaper:hover {
+        /* margin-top: 20px;
+        margin-bottom: 20px; */
+        border: 1px solid orange;
+        transform: scale(1.1);
+        transition: 0.5s;
+      }
+      .info-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 150vh;
+        gap: 70px;
+        margin-bottom: 20px;
+      }
+       .view{
+        display: none;
+
+      }
+      }
+      .home {
+        align-items: center;
+        text-align: center;
+        padding: 8px;
+      }
+      .home a {
+        padding: 8px;
+        width: 90px;
+        font-size: 14px;
+        background-color: black;
+        border: none;
+        border: 1px solid orange;
+        color: orange;
+        border-radius: 8px;
+        text-decoration: none;
+      }
+      .hero-btn button {
+        margin-left: 10px;
+      }
+
+    </style>
   </head>
   <body>
-    <div class="header">
-      <div class="header-logo">
-        <p>For Vip's only</p>
+    <div id="home" class="header">
+      <div class="logo-name">
+        <img class="logo" src="images/dev.jpg" alt="">
+        <p>Faith Immortals Behavior</p>
       </div>
-      <div class="header-section">
-        <p></p>
-      </div>
-      <div class="header-btn"></div>
+      <div class="btn-header">
+        <nav>
+          <ul>
+            <li><a href="#js">HTML</a></li>
+            <li><a href="#js">CSS</a></li>
+            <li><a href="#js">JAVASCRIPT</a></li>
+          </ul>
+        </nav>
+        <button>Register</button>
+      </div>     
     </div>
-    <div class="header-description">
-      <div class="header-text">
-        <p>my participants</p>
+
+    <div class="main">
+      <div class="main-logo">
+        <img class="wallpaper" src="images/img3.jpg" alt="">
+        <div class="info-btn">
+          <p>Anime Girl Smoking</p>
+          <div class="hero-btn">
+            <button class="view">View</button>
+            <button>Download</button>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="container">
-      <div class="image1">
-        <img src="images/imgae1.jpg" alt="" />
-        <p>Marco Maluto</p>
+
+      <div class="main-logo">
+        <img class="wallpaper" src="images/img2.jpg" alt="">
+        <div class="info-btn">
+          <p>Island Night Moon</p>
+          <div class="hero-btn">
+            <button class="view">View</button>
+            <button>Download</button>
+          </div>
+        </div>
       </div>
-      <div class="image2">
-        <img src="images/image2.jpg" alt="" />
-        <p>Amhyr Puso</p>
-      </div>
-      <div class="image3">
-        <img src="images/image3.jpg" alt="" />
-        <p>Amir Vergara</p>
+
+      <div class="main-logo">
+        <img class="wallpaper" src="images/img1.jpg" alt="">
+        <div class="info-btn">
+          <p>Minimalistic Dark</p>
+          <div class="hero-btn">
+            <button class="view">View</button>
+            <button>Download</button>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="prank-container">
-      <a href="prank.html">
-        <button>see more</button>
-      </a>
-    </div>
+    <div class="info-container">
+      <div class="card">
+        <img id="js" src="images/html.jpg" alt="">
+        <div class="intro">
+          <h1></h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, id!</p>
+        </div>
+      </div>
 
-    <div class="notes">
-      <span
-        >mag iwan nalang po ng mensahe kung ano ang naexperience nyo at para
-        mabago ko at i submit ito saaming tanggapan, salamat</span
-      >
-      <input type="text" placeholder="Type here" />
-      <a href="prank.html">
-        <button class="submit">Submit</button>
-      </a>
+      <div class="card">
+        <img id="js" src="images/css.jpg" alt="">
+        <div class="intro">
+          <h1></h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, id!</p>
+        </div>
+      </div>
+        <div class="card">
+        <img id="js" src="images/js.png" alt="">
+        <div class="intro">
+          <h1></h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, id!</p>
+        </div>
+      </div>
+    </div>
+    <div class="home">
+      <a href="#home">Home</a>
+    </div>
+    <div class="footer">
+      <p><a href="">Simple Web Design</a></p>
+      <div class="icon-f">
+        <img src="images/icon1.png" alt=""><img src="images/icon2.png" alt=""><img src="images/icon3.png" alt=""><img src="images/icon4.png" alt="">
+      </div>
     </div>
   </body>
 </html>
